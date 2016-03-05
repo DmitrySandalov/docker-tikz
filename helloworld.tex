@@ -1,9 +1,10 @@
-\documentclass{standalone}
-\usepackage{tikz}
+\documentclass[tikz,border=0.1cm]{standalone}
+\usetikzlibrary{graphs,graphdrawing}
+\usegdlibrary{trees}
 \begin{document}
-
-\begin{tikzpicture}
-\draw 
-    (1,1) node[anchor=north east,circle, draw]{A} -- (2,2) node[anchor=south west, circle,draw]{B}; 
-\end{tikzpicture}
+\tikz \graph [tree layout, nodes={draw,circle}] {
+    6 -- [very thick,purple] {4 -- {3,8,9}};
+    6 -- {0, 2 -- {1,7}, 5};
+};
 \end{document}
+
